@@ -21,16 +21,15 @@ TBlocos addTBlocos (int qnt_blocos, double vlm, double x){
 
 //Faz a pesquisa binaria
 double binSearch(double min, double max, TBlocos block){
-
     if(max == 0) return 0;
 
     double med = (min + max)/2; //Pega o ponto medio
     double vlm = med * block.x * block.x * 2 * block.qnt_blocks; //Calula o volume de mateira prima a ser usada
 
-    if(min == max && vlm != block.vlm) return -1;
+    if(min == max && vlm != block.vlm) return -1; //Se não tiver encontrado nada
     else if(vlm > block.vlm) return binSearch(min, med + .001, block); //Se o valor estiver antes do ponto medio
     else if(vlm < block.vlm) return binSearch(med - .001, max, block); //Se o valor estiver depois do ponto medio
-    else return med; //Se o valor estiver antes do ponto medio */
+    else return med; //Se o valor for o do ponto medio */
 }
 
 //Imprime o vetor
